@@ -17,7 +17,7 @@ body {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 5fr 3fr;
-  gap: 1rem;
+  gap: 2rem;
   margin: 2rem auto;
 }
 
@@ -36,7 +36,9 @@ body {
 
 .img img,
 canvas {
-  max-width: 300px;
+  padding: 1rem;
+  width: 90%;
+  max-width: 400px;
   height: 300px;
   object-fit: contain;
   border: 1px solid white;
@@ -81,10 +83,5 @@ span {
 @media screen and (max-width: 650px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  .img img,
-  canvas {
-    max-width: 80vw;
   }
 }
