@@ -16,9 +16,9 @@ let imgBox = document.querySelector(".img-box");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const toggleDisabled = () => {
+const toggleDisabled = (flag) => {
   inputs.forEach((input) => {
-    input.disabled = !input.disabled;
+    input.disabled = flag;
   });
 };
 
@@ -51,7 +51,7 @@ window.onload = function () {
   download.style.display = "none";
   reset.style.display = "none";
   imgBox.style.display = "none";
-  toggleDisabled();
+  toggleDisabled(true);
 };
 
 upload.onchange = function () {
@@ -59,7 +59,7 @@ upload.onchange = function () {
   download.style.display = "block";
   reset.style.display = "block";
   imgBox.style.display = "block";
-  toggleDisabled();
+  toggleDisabled(false);
 
   let file = new FileReader();
   file.readAsDataURL(upload.files[0]);
